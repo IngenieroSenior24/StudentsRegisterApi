@@ -1,6 +1,7 @@
 using Api.Filters;
 using Infrastructure.Common;
 using Infrastructure.Extensions;
+using Microsoft.AspNetCore.HttpLogging;
 using Prometheus;
 using Serilog;
 
@@ -24,6 +25,11 @@ builder.Services.AddControllers(opts =>
 builder.Services.AddInfrastructure(config, builder.Environment);
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddHttpLogging(options =>
+{
+    options.LoggingFields = HttpLoggingFields.All;
+});
 
 WebApplication app = builder.Build();
 await app.InitializeDatabasesAsync();
