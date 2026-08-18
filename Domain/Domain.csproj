@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>81be08ed-687f-4956-8b79-e9f58508ce19</UserSecretsId>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Update="Messages.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Messages.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Messages.en.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <DependentUpon>Messages.resx</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Messages.es.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <DependentUpon>Messages.resx</DependentUpon>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Entities\Enums\" />
+    </ItemGroup>
+
+</Project>
